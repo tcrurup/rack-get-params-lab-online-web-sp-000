@@ -22,7 +22,11 @@ class Application
       end
     elsif req.path.match(/add/)
       item = req.params["item"]
-      binding.pry
+      if self.class.items.include?(item)
+        self.class.cart << item
+      else
+        
+      end
     else
       resp.write "Path Not Found"
     end
@@ -40,5 +44,9 @@ class Application
   
   def self.cart
     @@cart
+  end
+  
+  def self.items
+    @@items
   end
 end
