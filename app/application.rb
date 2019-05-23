@@ -18,7 +18,7 @@ class Application
       if self.class.cart.length == 0
         resp.write "Your cart is empty"
       else
-        self.class.cart.each{ |item| resp.write item }
+        self.class.cart.each{ |item| "#{resp.write item}\n" }
       end
     else
       resp.write "Path Not Found"
