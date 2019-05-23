@@ -24,6 +24,7 @@ class Application
       item = req.params["item"]
       if self.class.items.include?(item)
         self.class.cart << item
+        resp.write "added #{item}"
       else
         
       end
