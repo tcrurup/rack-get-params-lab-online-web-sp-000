@@ -26,7 +26,7 @@ class Application
         self.class.cart << item
         resp.write "added #{item}"
       else
-        
+        resp.write "We don't have that item"
       end
     else
       resp.write "Path Not Found"
